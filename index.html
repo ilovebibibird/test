@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | PTT Politics Taiwan’s Presidents</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
-    <link rel="stylesheet" href="TemplateData/style.css" />
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
+    <div id="unity-container" class="unity-desktop" style="width: 100%; height: 100%">
       <canvas id="unity-canvas" width="auto" height="auto"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -60,6 +60,7 @@
         updateBannerVisibility();
       }
 
+
       var buildUrl = 'Build';
       var loaderUrl = buildUrl + '/1120624 webgl version.loader.js';
       var config = {
@@ -83,14 +84,21 @@
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
+     
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content =
-          'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=no';
+          'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = 'unity-mobile';
-        canvas.className = 'unity-mobile';
+
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
+
+        canvas.style.width = 'auto';
         canvas.style.height = window.height + 'px';
+
         if (window.innerHeight > window.innerWidth) {
           warningBanner.style.display = 'block';
           loadingBar.style.display = 'none';
@@ -119,9 +127,10 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = 'none';
-        canvas.style.height = 'none';
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = 'auto';
       }
+
       var script = document.createElement('script');
       script.src = loaderUrl;
       if (window.innerHeight < window.innerWidth) {
