@@ -61,15 +61,15 @@
       }
 
       var buildUrl = 'Build';
-      var loaderUrl = buildUrl + '/UnityWebGL0702.loader.js';
+      var loaderUrl = buildUrl + '/UnityWebGL0707.loader.js';
       var config = {
-        dataUrl: buildUrl + '/UnityWebGL0702.data.unityweb',
-        frameworkUrl: buildUrl + '/UnityWebGL0702.framework.js.unityweb',
-        codeUrl: buildUrl + '/UnityWebGL0702.wasm.unityweb',
+        dataUrl: buildUrl + '/UnityWebGL0707.data.unityweb',
+        frameworkUrl: buildUrl + '/UnityWebGL0707.framework.js.unityweb',
+        codeUrl: buildUrl + '/UnityWebGL0707.wasm.unityweb',
         streamingAssetsUrl: 'StreamingAssets',
         companyName: 'BilingualGames',
         productName: 'PTT Politics Taiwan’s Presidents',
-        productVersion: '0.0.3',
+        productVersion: '0.0.4',
         showBanner: unityShowBanner,
       };
 
@@ -86,7 +86,7 @@
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content =
-          'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=no';
+          'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = 'unity-mobile';
         canvas.className = 'unity-mobile';
