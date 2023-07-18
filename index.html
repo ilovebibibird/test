@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Unity WebGL Player | PTT Politics Taiwan’s Presidents</title>
+    <title>Unity WebGL Player | PTTPolitics</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico" />
     <link rel="stylesheet" href="TemplateData/style.css" />
   </head>
@@ -61,15 +61,15 @@
       }
 
       var buildUrl = 'Build';
-      var loaderUrl = buildUrl + '/UnityWebGL0714.loader.js';
+      var loaderUrl = buildUrl + '/UnityWebGL0718.loader.js';
       var config = {
-        dataUrl: buildUrl + '/UnityWebGL0714.data.unityweb',
-        frameworkUrl: buildUrl + '/UnityWebGL0714.framework.js.unityweb',
-        codeUrl: buildUrl + '/UnityWebGL0714.wasm.unityweb',
+        dataUrl: buildUrl + '/UnityWebGL0718.data.unityweb',
+        frameworkUrl: buildUrl + '/UnityWebGL0718.framework.js.unityweb',
+        codeUrl: buildUrl + '/UnityWebGL0718.wasm.unityweb',
         streamingAssetsUrl: 'StreamingAssets',
         companyName: 'BilingualGames',
-        productName: 'PTT Politics Taiwan’s Presidents',
-        productVersion: '0.0.4',
+        productName: 'PTTPolitics',
+        productVersion: '0.0.1',
         showBanner: unityShowBanner,
       };
 
@@ -125,11 +125,9 @@
         );
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
         canvas.style.width = window.innerWidth + 'px';
         canvas.style.height = 'auto';
       }
-
       var script = document.createElement('script');
       script.src = loaderUrl;
       if (window.innerHeight < window.innerWidth) {
